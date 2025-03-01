@@ -1,1 +1,0 @@
-../../../examples/5_write_parallel.py

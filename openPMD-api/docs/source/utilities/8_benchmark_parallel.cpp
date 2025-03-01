@@ -1,1 +1,0 @@
-../../../examples/8_benchmark_parallel.cpp

@@ -1,1 +1,0 @@
-../../../examples/10_streaming_read.py
