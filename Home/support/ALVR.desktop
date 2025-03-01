@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=ALVR
+Exec=ALVRLauncher
+Comment=
+Terminal=false
+PrefersNonDefaultGPU=false
+Icon=/usr/share/icons/ALVR.jpeg
+Type=Application
+Name[en_US]=ALVR.desktop

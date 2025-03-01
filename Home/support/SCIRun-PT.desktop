@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=S-Container
+Exec=SCIRun/bin/SCIRun/SCIRun -0
+Comment=
+Terminal=true
+Icon=/usr/share/icons/LWFA_pt.png
+Type=Application
+Name[en_US]=SCIRun-PT.desktop

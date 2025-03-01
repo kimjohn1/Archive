@@ -1,0 +1,16 @@
+[Desktop Entry]
+Name=Godot Engine (C#/.NET)
+GenericName=Libre game engine
+Comment=Multi-platform 2D and 3D game engine with a feature-rich editor
+Exec=godot
+Icon=/home/kj/Pictures/pix/M_Res.png
+Terminal=false
+PrefersNonDefaultGPU=true
+Type=Application
+MimeType=application/x-godot-project;
+Categories=Development;IDE;
+StartupWMClass=Godot
+X-Desktop-File-Install-Version=0.27
+X-Flatpak=org.godotengine.GodotSharp
+Name[en_US]=Godot.desktop
+GenericName[en_US]=game engine
