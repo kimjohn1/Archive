@@ -96,11 +96,11 @@
     export CMAKE_PREFIX_PATH=~/lib/ADIOS2:$CMAKE_PREFIX_PATH
     export LD_LIBRARY_PATH=~/lib/ADIOS2/lib:$LD_LIBRARY_PATH
 
-# Load openpmd - Loads openPMD version 0.15.0
+# Load openpmd - Loads openPMD version 0.16.0
     cd ~/src
     git clone https://github.com/kimjohn1/openPMD-api.git
     cd openPMD-api
-    git checkout 0.15.0
+    git checkout 0.16.0
     cd ../openPMD-api-build
     cmake -DCMAKE_INSTALL_PREFIX=~/lib/openPMD-api -DopenPMD_USE_MPI=ON -DopenPMD_USE_ADIOS2=ON -DopenPMD_USE_HDF5=ON ~/src/openPMD-api
     make install -j8
