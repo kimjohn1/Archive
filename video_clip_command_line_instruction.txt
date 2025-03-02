@@ -1,0 +1,32 @@
+video clip function as a command line instruction
+Format is:
+          "source"             -ss "start time"  -t "duration to stop time"  "destination"
+
+timea are in seconds
+
+ffmpeg -i "Videos/2D_vis_demo-1.mp4" -ss "22" -t "91" "Videos/2D_demo_clip.mp4"
+
+Concatenate 3 clips:
+
+Create a test file with the names of the clips:
+
+file '3D_clip1.mp4'
+file '3D_clip2.mp4'
+file '3D_clip3.mp4'
+
+Name the text file something like input.txt then run the following from the directory where the clips and text file are located
+
+ffmpeg -f concat -i input.txt -c copy output.mp4
+
+
+speed up a video:
+
+ffmpeg -i input.mp4 -filter:v "setpts=0.5*PTS" -an output.mp4
+
+Here is a breakdown of the various parameters:
+
+    -i input.mp4: Specifies the input video file that FFmpeg will process. Replace input.mp4 with the name of your video file.
+    -filter:v: Applies a video filter to the input video stream.
+    setpts=0.5PTS: It reduces the PTS by half (0.5), which makes the output video play twice as fast as the original video.
+     You can adjust the figure to suit your use case. For example, using 0.25PTS will make the output video play four times faster.
+    -an: The -an stands for “audio none” and it disables the audio stream in the output file.
