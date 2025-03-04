@@ -110,9 +110,6 @@
     export LD_LIBRARY_PATH=~/lib/openPMD-api/lib:$LD_LIBRARY_PATH
 
 # Install Qt
-    sudo apt -y install python3-pip
-    pip3 install aqtinstall
-    mkdir ~/Qt
     python3 -m aqt install-qt --outputdir ~/Qt linux desktop 6.3.1 gcc_64
 
 # Install SCIRun
