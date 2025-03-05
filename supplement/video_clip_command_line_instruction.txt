@@ -2,7 +2,7 @@ video clip function as a command line instruction
 Format is:
           "source"             -ss "start time"  -t "duration to stop time"  "destination"
 
-timea are in seconds
+times are in seconds
 
 ffmpeg -i "Videos/2D_vis_demo-1.mp4" -ss "22" -t "91" "Videos/2D_demo_clip.mp4"
 
