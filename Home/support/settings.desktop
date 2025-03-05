@@ -4,6 +4,6 @@ Exec=nvidia-settings
 Comment=
 Terminal=false
 PrefersNonDefaultGPU=false
-Icon=/home/kj/Pictures/pix/nvidia.png
+Icon=/usr/share/icons/nvidia.png
 Type=Application
 Name[en_US]=settings.desktop

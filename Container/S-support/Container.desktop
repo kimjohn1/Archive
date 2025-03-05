@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=S-Container
+Exec=singularity run --fakeroot --writable --bind /run,picInputs:/Project/picInputs,simulations:/Project/src/picongpu/share/picongpu/examples,scratch:/Project/scratch scirun_pt
+Comment=
+Terminal=true
+Icon=/usr/share/icons/e-density.png
+Type=Application
+Name[en_US]=Container.desktop

@@ -16,16 +16,18 @@
     sudo mv Godot_v4.3-stable_linux.x86_64 /usr/local/bin/godot
 
 # Set up the desktop launcher
-    sudo cp ~/support/M_Res.png /usr/share/icons
+    sudo cp ~/support/icon.svg /usr/share/icons
     cp ~/support/Godot.desktop ~/Desktop
     chmod +rwx ~/Desktop/Godot.desktop
 
 # Set up the simple_wave Project
     cp -r ~/support/simple_wave/ ~/Documents/Godot/Projects/
 
+# Set up numpy_wave and anime_wave Projects as well
+
 # Install ScalarField2PNGSlice app
-    cp -r ~/support/ScalarField2PNGSlice/ ~/
-    chmod +rwx ~/ScalarField2PNGSlice/ScalarField2PNGSlice
+#    cp -r ~/support/ScalarField2PNGSlice/ ~/
+#    chmod +rwx ~/ScalarField2PNGSlice/ScalarField2PNGSlice
 
 # Install ALVR Launcher
 
