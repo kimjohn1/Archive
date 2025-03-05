@@ -1,6 +1,6 @@
 # Install Dependencies
 
-#    Use Software Manager to install Monado-service
+#    Use Software Manager to install Monado-service and Steam (system package)
 
 # Create directories
 
