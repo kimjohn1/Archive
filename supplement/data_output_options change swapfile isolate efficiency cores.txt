@@ -1,0 +1,25 @@
+  --openPMD.source arg data sources: [species_all, fields_all,
+                                        e_all, E, B, e_all_chargeDensity,
+                                        e_all_energyDensity] | default:
+                                        species_all, fields_all 
+
+How to change the swap file size:
+
+sudo swapoff -a
+sudo fallocate -l 32G /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+
+verify with:
+swapon --show
+
+
+How to isolate the efficiency cores:
+
+sudo nano /etc/default/grub
+
+add a line of text at the bottom:
+
+GRUB_CMDLINE_LINUX_DEFAULT="isolcpus=16,17,18,19,20,21,22,23"
+
+save the change: ctl O, then enter, then ctl X
