@@ -109,37 +109,55 @@
     export CMAKE_PREFIX_PATH=~/lib/openPMD-api:$CMAKE_PREFIX_PATH
     export LD_LIBRARY_PATH=~/lib/openPMD-api/lib:$LD_LIBRARY_PATH
 
-# Install Qt
+# Install Qt6
+    mkdir -p ~/Qt
+    sudo apt -y install python3-pip
+    pip3 install aqtinstall
     python3 -m aqt install-qt --outputdir ~/Qt linux desktop 6.3.1 gcc_64
 
-# Install SCIRun
-    cd ~/
-	export CMAKE_PREFIX_PATH=~/lib/pngwriter:$CMAKE_PREFIX_PATH
-    export LD_LIBRARY_PATH=~/lib/pngwriter/lib:$LD_LIBRARY_PATH
-    export CMAKE_PREFIX_PATH=~/lib/ADIOS2:$CMAKE_PREFIX_PATH
-    export LD_LIBRARY_PATH=~/lib/ADIOS2/lib:$LD_LIBRARY_PATH
-    export CMAKE_PREFIX_PATH=~/lib/openPMD-api:$CMAKE_PREFIX_PATH
-    export LD_LIBRARY_PATH=~/lib/openPMD-api/lib:$LD_LIBRARY_PATH
-    export CMAKE_PREFIX_PATH=~/Qt/6.3.1/gcc_64/lib/cmake:$CMAKE_PREFIX_PATH
 
-    git clone https://github.com/kimjohn1/SCIRun.git
-    cd SCIRun
-    git checkout dev_4
-    cd bin
-    cmake -DSCIRUN_QT_MIN_VERSION=6.3.1 -DQt_PATH=~/Qt/6.3.1/gcc_64 -DWITH_OSPRAY=OFF ../Superbuild
-    make -j8
-    cd ~/
+# Install OpenVisus
+# From: https://github.com/sci-visus/OpenVisus/blob/master/docs/compilation.md
 
-# Load data to the directories
+# Additional Dependencies
     cd ~/
-    cp -a ~/src/picongpu/share/picongpu/examples/* ~/simulations
-    cp -a support/networks ~/Documents
-    cp -a support/sim_out ~/Documents
-    cp -a support/cnpy ~/src
+    sudo apt install -y patchelf
+    sudo apt install -y swig
+    sudo apt install -y mesa-common-dev
+    python3 -m pip install numpy
+    pip install --force-reinstall numpy==1.26.2
 
-# Compile cnpy example1
-    mkdir -p ~/src/cnpy-build
-    cd ~/src/cnpy-build
-    cmake ~/src/cnpy
-    make
+# Install Qt5
+    python3 -m aqt install-qt --outputdir ~/Qt linux desktop 5.15.2 gcc_64
+
+# Get the repo and compile OpenVisus Note: the cmake flag below may need to be changed from -DQt5_DIR=~/Qt/5.15.2 ... to -DQt_DIR=~/Qt/5.15.2 ...
+    git clone https://github.com/sci-visus/OpenVisus
+    cd OpenVisus
+    mkdir build
+    cd build
+
+    cmake -DPython_EXECUTABLE=$(which python3) -DQt5_DIR=~/Qt/5.15.2/gcc_64/lib/cmake -DVISUS_GUI=1 _DVISUS_MODVISUS=0 ../
+    cmake --build ./ --target all     --config Release -j 8 
+    cmake --build ./ --target install --config Release
+
+# Configure for OpenVisus
+    PYTHONPATH=$(pwd)/Release python3 -m OpenVisus configure
+
+# Note, you can run OpenVisus viewer using this command
+    #PYTHONPATH=$(pwd)/Release python3 -m OpenVisus viewer #from the /home/kj/OpenVisus/build directory
+    #or
+    #PYTHONPATH=/home/kj/OpenVisus/build/Release python3 -m OpenVisus viewer #from anywhere
+    #or
+    #PYTHONPATH=~/OpenVisus/build/Release python3 -m OpenVisus viewer #from anywhere
+
+# Set up the desktop launcher
     cd ~/
+    sudo cp support/SCIRun_4.png /usr/share/icons
+    cp support/Viewer.desktop ~/Desktop
+    chmod +rwx ~/Desktop/Viewer.desktop
+    chmod +rwx ~/launch_visus.sh
+
+    sudo cp support/nvidia.png /usr/share/icons
+    cp support/settings.desktop ~/Desktop
+    chmod +rwx ~/Desktop/settings.desktop
+
