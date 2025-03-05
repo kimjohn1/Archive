@@ -150,11 +150,11 @@
     #or
     #PYTHONPATH=~/OpenVisus/build/Release python3 -m OpenVisus viewer #from anywhere
 
-# Set up the desktop launcher
+# Set up desktop launchers
     cd ~/
-    sudo cp support/SCIRun_4.png /usr/share/icons
-    cp support/Viewer.desktop ~/Desktop
-    chmod +rwx ~/Desktop/Viewer.desktop
+    sudo cp support/M_Res.png /usr/share/icons
+    cp support/Visus ~/Desktop
+    chmod +rwx ~/Desktop/Visus
     chmod +rwx ~/launch_visus.sh
 
     sudo cp support/nvidia.png /usr/share/icons

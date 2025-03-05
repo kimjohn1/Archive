@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Viewer
-Exec=/home/kj/launch_visus.sh
-Comment=
-Terminal=false
-PrefersNonDefaultGPU=false
-Icon=/usr/share/icons/SCIRun_4.png
-Type=Application
