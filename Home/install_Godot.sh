@@ -1,6 +1,6 @@
 # Install Dependencies
 
-#    Use Software Manager to install Monado-service and Steam (system package)
+#    Use Software Manager to install Monado-service and Steam
 
 # Create directories
 
@@ -16,20 +16,19 @@
     sudo mv Godot_v4.3-stable_linux.x86_64 /usr/local/bin/godot
 
 # Set up the desktop launcher
-    sudo cp ~/support/icon.svg /usr/share/icons
+    sudo cp ~/support/M_Res.png /usr/share/icons
     cp ~/support/Godot.desktop ~/Desktop
     chmod +rwx ~/Desktop/Godot.desktop
+    chmod +rwx ~/launch_run_godot.sh
 
 # Set up the simple_wave Project
     cp -r ~/support/simple_wave/ ~/Documents/Godot/Projects/
 
-# Set up numpy_wave and anime_wave Projects as well
-
 # Install ScalarField2PNGSlice app
-#    cp -r ~/support/ScalarField2PNGSlice/ ~/
-#    chmod +rwx ~/ScalarField2PNGSlice/ScalarField2PNGSlice
+    cp -r ~/support/ScalarField2PNGSlice/ ~/
+    chmod +rwx ~/ScalarField2PNGSlice/ScalarField2PNGSlice
 
-# Install ALVR Launcher
+# Install ALVR (Launcher)
 
     wget https://github.com/alvr-org/ALVR/releases/download/v20.11.1/alvr_launcher_linux.tar.gz
     tar -xzf alvr_launcher_linux.tar.gz -C ~/Documents/alvr/

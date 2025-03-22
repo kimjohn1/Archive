@@ -78,8 +78,8 @@ int main(int argc, char *argv[])
 
     //save iteration_output[] to file as a NumPy array.  Note: The last arguement in the cnpy::npy_save() instruction is either "w" to overwrite or "a" to append.  The 4 lines of code below send "w" to storage in the numpy_wave Project and "a" to storage in the anime_wave Project
     //stringNmpyOut = home_+"/scratch/runs/SST/simOutput/savedNPY/arr1.npy";
-    stringNmpyOut = home_+"/Documents/Godot/Projects/numpy_wave/art/arr1.npy";
+    stringNmpyOut = home_+"/Documents/Godot/Projects/numpy_wave/art/arr_1.npy";
     cnpy::npy_save(stringNmpyOut,&iteration_output[0],{dim_u,dim_z,dim_y,dim_x},"w");
-    stringNmpyOut = home_+"/Documents/Godot/Projects/anime_wave/art/arr1_1.npy";
+    stringNmpyOut = home_+"/Documents/Godot/Projects/anime_wave/art/arr_4d.npy";
     if(append == 1) cnpy::npy_save(stringNmpyOut,&iteration_output[0],{dim_u,dim_z,dim_y,dim_x},"a");
 }

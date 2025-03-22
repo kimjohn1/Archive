@@ -1,9 +1,9 @@
 # This script can be used to install the CUDA Toolkit and the OpenVisus framework.
-# Please note a couple of different options for usinf this script to get the CUDA Toolkit and OpenVisus installed:
+# Please note a couple of different options for using this script to get the CUDA Toolkit and OpenVisus installed:
 
 # If there is an Nvidia driver version 530 or better already installed, then the recommended installation
-# is to use the Alternative manual installation described below.  You should comment out the Install CUDA Toolkit v12-1 steps
-# and then run this modified script to install dependencies and install OpenVisus, then manually do the steps to install the CUDA Toolkit,
+# is to use the Alternative manual installation described below.  You should comment out the Install CUDA Toolkit v12-1 steps (may already be done)
+# and then run this modified script to install dependencies and install OpenVisus, and step you through manually installing the CUDA Toolkit,
 # being careful to not install the driver (that is in the last step where you de-select driver, demo and documentation).
 #
 # If there is a pre-530 Nvidia driver installed, you can remove that by using the Linux Driver Manager to install the Nouveau driver
@@ -14,7 +14,7 @@
 
 # I prefer to install a driver (the recommended driver) using Driver Manager and then install CUDA Toolkit manually
 
-# Note that this script uses data from the support folder that should be pasted to the home drive along with the Mint_prep.sh script 
+# Note that this script uses data from the support folder that should be pasted to the home drive along with the 1_prep.sh script 
 
 
 
@@ -51,28 +51,31 @@
 # Alternative manual installation (I use this one)
     wget https://developer.download.nvidia.com/compute/cuda/12.1.0/local_installers/cuda_12.1.0_530.30.02_linux.run
 
+echo "Steps to follow"
+echo "You will be prompted to enter a command"
+echo "After you do that:"
+echo "Wait for a small text based User Interface to appear"
+echo "Select Continue when the caution message appears"
+echo "Accept the EULA"
+echo "De-select the driver, demo and documentation, then proceed with the install"
+echo " "
 echo "Enter the following command"
 echo "sudo sh cuda_12.1.0_530.30.02_linux.run"
 
-# Wait for a small text based User Interface to appear.
-# Select Continue when the caution message appears
-# Accept the EULA
-# De-select the driver, demo and documentation, then proceed with the install
-
 # Set the PATH (do the steps manually if desired using sudo su then: echo "export PATH=/usr/local/cuda-12.1/bin${PATH:+:${PATH}}" >> /etc/profile)
 
-echo "Setting CUDA path now"
+#echo "Setting CUDA path now"
 sudo su <<EOF
 echo "export PATH=/usr/local/cuda-12.1/bin${PATH:+:${PATH}}" >> /etc/profile
 EOF
-echo "CUDA path is set"
+#echo "CUDA path is set"
 
     #rm -rf cuda_12.1.0_530.30.02_linux.run
 
 # Reboot
+#echo ""
+#echo "*********************************"
 echo ""
-echo "*********************************"
-echo ""
-echo "Please reboot your system now"
-echo "Reboot is required for the changes just made to take effect"
+echo "After the CUDA installation is complete, remember to reboot your system"
+echo "Reboot is required for the changes made during installation to take effect"
 
