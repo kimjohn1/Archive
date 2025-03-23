@@ -23,6 +23,10 @@
     cp -a ~/support/networks ~/Documents
     cp -a ~/support/sim_out ~/Documents
     cp -a ~/support/cnpy ~/src
+    tar -xzf ~/Archive/supplement/Godot_Projects/numpy_wave.tar.gz
+    tar -xzf ~/Archive/supplement/Godot_Projects/anime_wave.tar.gz
+    mv ~/numpy_wave/ ~/Documents/Godot/Projects/
+    mv ~/anime_wave/ ~/Documents/Godot/Projects/
 
 # Compile cnpy example1
     mkdir -p ~/src/cnpy-build

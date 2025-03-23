@@ -16,7 +16,7 @@
     sudo mv Godot_v4.3-stable_linux.x86_64 /usr/local/bin/godot
 
 # Set up the desktop launcher
-    sudo cp ~/support/M_Res.png /usr/share/icons
+    sudo cp ~/support/icon.svg /usr/share/icons
     cp ~/support/Godot.desktop ~/Desktop
     chmod +rwx ~/Desktop/Godot.desktop
     chmod +rwx ~/launch_run_godot.sh

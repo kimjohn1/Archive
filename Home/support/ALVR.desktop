@@ -6,4 +6,4 @@ Terminal=false
 PrefersNonDefaultGPU=false
 Icon=/usr/share/icons/ALVR.jpeg
 Type=Application
-Name[en_US]=ALVR.desktop
+Name[en_US]=ALVR

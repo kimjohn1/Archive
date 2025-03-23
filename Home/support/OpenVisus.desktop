@@ -1,8 +1,8 @@
 [Desktop Entry]
 Name=v
-Exec=/home/kj/launch_viewer.sh
+Exec=/home/kj/launch_visus.sh
 Comment=
 Terminal=false
 Icon=/usr/share/icons/M_Res.png
 Type=Application
-Name[en_US]=Visus
+Name[en_US]=OpenVisus

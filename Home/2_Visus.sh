@@ -16,6 +16,7 @@
 
      
 # Create directories
+    mkdir -p ~/Documents/Godot/Projects
     mkdir -p ~/src/openPMD-api ~/src/openPMD-api-build
     mkdir -p ~/src/pngwriter ~/src/pngwriter-build
     mkdir -p ~/src/ADIOS2 ~/src/ADIOS2-build
@@ -155,9 +156,9 @@
 
 # Set up the desktop launcher
     cd ~/
-    sudo cp support/SCIRun_4.png /usr/share/icons
-    cp support/Viewer.desktop ~/Desktop
-    chmod +rwx ~/Desktop/Viewer.desktop
+    sudo cp support/M_Res.png /usr/share/icons
+    cp support/OpenVisus.desktop ~/Desktop
+    chmod +rwx ~/Desktop/OpenVisus.desktop
     chmod +rwx ~/launch_visus.sh
 
     sudo cp support/nvidia.png /usr/share/icons

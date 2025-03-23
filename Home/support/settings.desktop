@@ -6,4 +6,4 @@ Terminal=false
 PrefersNonDefaultGPU=false
 Icon=/usr/share/icons/nvidia.png
 Type=Application
-Name[en_US]=settings.desktop
+Name[en_US]=settings

@@ -12,5 +12,5 @@ Categories=Development;IDE;
 StartupWMClass=Godot
 X-Desktop-File-Install-Version=0.27
 X-Flatpak=org.godotengine.GodotSharp
-Name[en_US]=Godot.desktop
+Name[en_US]=Godot
 GenericName[en_US]=game engine
